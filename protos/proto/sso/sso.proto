@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "kovalyov.sso.v1;ssov1";
+
+service Auth {
+  rpc Register (RegisterRequest) returns (RegisterResponse);
+  rpc Login (LoginRequest) returns (LoginResponse);
+  rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
+}
+
+message RegisterRequest {
+  string email = 1; // Email пользователя для регистрации
+  string password = 2; // Пароль пользователя для регистрации
+}
+
+message RegisterResponse {
+  int64 user_id = 1; // ID зарегистрированного пользователя
+}
+
+message LoginRequest {
+  string email = 1; // Email пользователя для входа в систему
+  string password = 2; // Пароль пользователя для входа в систему
+  int32 app_id = 3; // ID приложения для входа в систему
+}
+
+message LoginResponse {
+  string token = 1; // Токен аутентификации вошедшего в систему пользователя
+}
+
+message IsAdminRequest {
+  int64 user_id = 1; // ID пользователя, который мы хотим проверить
+}
+
+message IsAdminResponse {
+  bool is_admin = 1; // Указывает является ли пользователь админом
+}
