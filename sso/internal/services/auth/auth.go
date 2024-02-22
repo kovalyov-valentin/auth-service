@@ -7,8 +7,8 @@ import (
 	"golang.org/x/crypto/bcrypt"
 	"log/slog"
 	"sso/internal/domain/models"
-	"sso/internal/lib /jwt"
-	"sso/internal/lib /logger/sl"
+	"sso/internal/lib/jwt"
+	"sso/internal/lib/logger/sl"
 	"sso/internal/storage"
 	"time"
 )
