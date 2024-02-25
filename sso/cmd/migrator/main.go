@@ -15,7 +15,7 @@ func main() {
 
 	flag.StringVar(&storagePath, "storage-path", "", "path to storage")
 	flag.StringVar(&migrationsPath, "migrations-path", "", "path to migration")
-	flag.StringVar(&migrationTable, "migration-table", "migrations", "name of migration table")
+	flag.StringVar(&migrationTable, "migrations-table", "migrations", "name of migration table")
 	flag.Parse()
 
 	if storagePath == "" {
